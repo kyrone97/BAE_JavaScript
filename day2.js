@@ -68,3 +68,38 @@ for (let car in garage) {
     console.log(garage[car].make)
 }
 
+let massiveJSON = {
+    "smallerJSON": {
+        "students": [{
+            "name": "Dan",
+            "dob": "128412",
+            "location": "Barcelona"
+        }, {
+            "name": "Cansu",
+            "dob":"1839128",
+            "location": "Peru"
+        }
+    ]}
+}
+
+console.log(massiveJSON)
+// JSON.stringify
+// Target a specific student to print out
+
+let getDan = JSON.stringify(massiveJSON.smallerJSON.students[0])
+
+console.log(getDan)
+
+let getCansu = JSON.stringify(massiveJSON.smallerJSON.students[1])
+
+console.log(getCansu)
+
+// JSON.parse
+
+let cookey = ` {"name":"Chris"}`
+
+// turning the string into an object
+
+let parse = JSON.parse(cookey)
+console.log(parse)
+
