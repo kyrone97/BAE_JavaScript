@@ -8,6 +8,8 @@ const saveEl = document.getElementById("save-el")
 
 const divEl = document.getElementById("div-el")
 
+const listEl = document.getElementById("list-el")
+
 let counter = 0;
 let display = [ ]
 let count = 0;
@@ -18,13 +20,15 @@ function increment(){
 }
 
 addOneEl.addEventListener("click",increment)
+
 function save(){
-    counter = count
-    display.push(count)
-    divEl.textContent = display  
-    count = 0
-    countEl.textContent = count
+  
+    const li = document.createElement("li")
 
-   }
+    li.textContent = count
+    listEl.appendChild(li)
+
+}
+
+
 saveEl.addEventListener("click",save)
-
